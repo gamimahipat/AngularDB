@@ -1,0 +1,169 @@
+
+<h1 class="text-center">
+  REGISTER
+</h1>
+
+<hr />
+
+<form [formGroup]="angForm" novalidate>
+
+  <div class="row">
+
+    <div class="col-lg-4">
+      <div class="form-group ">
+        <label>First Name : </label>
+        <input class="form-control" formControlName="fname" type="text">
+
+        <div *ngIf="angForm.controls['fname'].invalid && (angForm.controls['fname'].dirty || angForm.controls['fname'].touched)" class=" alert-danger">
+          <div *ngIf="angForm.controls['fname'].errors?.required">
+            Fisrt Name is required.
+          </div>
+          <div *ngIf="angForm.controls['fname'].errors?.pattern">
+            Fisrt Name is not valid.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="form-group ">
+        <label>Last Name : </label>
+        <input class="form-control" formControlName="lname" type="text">
+
+        <div *ngIf="angForm.controls['lname'].invalid && (angForm.controls['lname'].dirty || angForm.controls['lname'].touched)" class=" alert-danger">
+          <div *ngIf="angForm.controls['lname'].errors?.required">
+            Last Name is required.
+          </div>
+          <div *ngIf="angForm.controls['lname'].errors?.pattern">
+            Last Name is not valid.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="form-group ">
+        <label>Mobile Number : </label>
+        <input class="form-control" formControlName="mnumber" type="text">
+
+        <div *ngIf="angForm.controls['mnumber'].invalid && (angForm.controls['mnumber'].dirty || angForm.controls['mnumber'].touched)" class=" alert-danger">
+          <div *ngIf="angForm.controls['mnumber'].errors?.required">
+            Mobile Number is required.
+          </div>
+          <div *ngIf="angForm.controls['mnumber'].errors?.pattern" class=" alert-danger">
+            Mobile Number Not Valid
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="form-group ">
+        <label>Email : </label>
+        <input class="form-control" formControlName="email" type="text">
+
+        <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class=" alert-danger">
+          <div *ngIf="angForm.controls['email'].errors?.required">
+            Email is required.
+          </div>
+          <div *ngIf="angForm.controls['email'].errors?.pattern">
+            Email is not valid.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="col-lg-4">
+      <div class="form-group ">
+        <label>City : </label>
+        <input class="form-control" formControlName="city" type="text">
+        <div *ngIf="angForm.controls['city'].invalid && (angForm.controls['city'].dirty || angForm.controls['city'].touched)" class=" alert-danger">
+          <div *ngIf="angForm.controls['city'].errors?.required">
+            City is required.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="form-group ">
+        <label>House Number : </label>
+        <input class="form-control" formControlName="hnumber" type="text">
+        <div *ngIf="angForm.controls['hnumber'].invalid && (angForm.controls['hnumber'].dirty || angForm.controls['hnumber'].touched)" class=" alert-danger">
+          <div *ngIf="angForm.controls['hnumber'].errors?.required">
+            House Number is required.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="form-group ">
+        <label>Street : </label>
+        <input class="form-control" formControlName="street" type="text">
+        <div *ngIf="angForm.controls['street'].invalid && (angForm.controls['street'].dirty || angForm.controls['street'].touched)" class=" alert-danger">
+          <div *ngIf="angForm.controls['street'].errors?.required">
+            Street is required.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="form-group ">
+        <label>PinCode : </label>
+        <input class="form-control" formControlName="pin" type="text">
+
+        <div *ngIf="angForm.controls['pin'].invalid && (angForm.controls['pin'].dirty || angForm.controls['pin'].touched)" class=" alert-danger">
+          <div *ngIf="angForm.controls['pin'].errors?.required">
+            PinCode is required.
+          </div>
+          <div *ngIf="angForm.controls['pin'].errors?.pattern" class=" alert-danger">
+            PinCode Code 6 Digit Only
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="form-group ">
+        <label>Password : </label>
+        <input class="form-control" formControlName="password" type="text">
+
+        <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class=" alert-danger">
+          <div *ngIf="angForm.controls['password'].errors?.required">
+            Password is required.
+          </div>
+          <div *ngIf="angForm.controls['password'].errors?.pattern" class=" alert-danger">
+            Password Should be 6 characters long , 1 uppercase , 1 lowercase char , 1 number , 1 Special Char.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <br />
+
+  <div class="text-center">
+    <button type="submit"
+            [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success ">
+      Register
+    </button>
+  </div>
+
+</form>
+<br />
+<p>Form value: {{ angForm.value | json }}</p>
+<p>Form status: {{ angForm.status | json }}</p>
+
+
+
+

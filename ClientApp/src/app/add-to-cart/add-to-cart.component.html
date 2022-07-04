@@ -1,0 +1,35 @@
+
+<table class="table table-hover table-bordered text-center align-middle">
+  <thead class="table-dark">
+
+    <tr>
+      <th>Image</th>
+      <th>Product Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Total Price</th>
+      <th>Remove</th>
+    </tr>
+
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let addToCard of addToCards">
+    <!--<img src="assets/{{product.productImage}}" height="225" width="225">-->
+      <td><img src="assets/{{addToCard.image}}" height="50" width="50" ></td>
+      <td>{{addToCard.product}}</td>
+      <td>{{addToCard.price}}</td>
+      <td>
+        <button class="btn btn-danger" (click)="dec(addToCard.addToCartID, addToCard.quantity,addToCard.productID)">&nbsp;-&nbsp;</button>
+        &nbsp;
+        {{addToCard.quantity}}
+        &nbsp;
+        <button class="btn btn-success" (click)="inc(addToCard.addToCartID, addToCard.quantity,addToCard.productID)">&nbsp;+&nbsp;</button>
+      </td>
+      <td>{{addToCard.price * addToCard.quantity}}</td>
+      <td><a (click)="deleteAddToCart(addToCard.addToCartID)"><i class="fa-solid fa-trash fa-2x" ></i></a></td>
+
+    </tr>
+
+  </tbody>
+</table>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularDB", "AngularDB.csproj", "{56DEE988-8021-43C7-8802-5FF63E75701F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56DEE988-8021-43C7-8802-5FF63E75701F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56DEE988-8021-43C7-8802-5FF63E75701F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56DEE988-8021-43C7-8802-5FF63E75701F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56DEE988-8021-43C7-8802-5FF63E75701F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DBD512D3-FFFC-4635-AB34-F30482EA7C04}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,58 @@
+
+
+
+<div class="row mb-5">
+
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-12 mb-4">
+        <img alt="" class="img-thumbnail p-0 border-0" src="assets/{{product.productImage}}" style="height:500px;width:500px" />
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+
+        <h2>{{product.productName}}</h2>
+
+        <hr />
+
+        <h4>
+          <label><b>Category : </b></label>&nbsp;&nbsp;&nbsp;
+          {{product.category}}
+        </h4>
+
+        <hr />
+
+        <h4>
+          <label><b>Price : </b></label>&nbsp;&nbsp;&nbsp;
+          ₹{{product.productPrice}}
+        </h4>
+
+        <hr />
+       
+        <h4>
+          <label><b>Quantity : </b></label>&nbsp;&nbsp;&nbsp;
+          <input type="number" class="text-center" id="" name="" value="1" min="1" max="5" />
+        </h4>
+
+        <hr />
+       
+        <h5>
+          <button type="button" class="btn btn-secondary"><i class="fas fa-heart"></i> Add</button>&nbsp;&nbsp;&nbsp;
+
+          <button type="button" class="btn btn-secondary" [routerLink]="['/show-product']"><i class="fas fa-exchange-alt"></i> Back</button>
+        </h5>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  {{product.productDetails}}
+</div>
+
+

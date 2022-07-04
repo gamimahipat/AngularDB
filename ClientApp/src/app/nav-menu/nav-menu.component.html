@@ -1,0 +1,66 @@
+<header>
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container">
+
+      <a class="navbar-brand" [routerLink]="['/']">AngularDB</a>
+
+      <button class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target=".navbar-collapse"
+              aria-label="Toggle navigation"
+              [attr.aria-expanded]="isExpanded"
+              (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end text-center"
+           [ngClass]="{ show: isExpanded }">
+        <ul class="navbar-nav flex-grow">
+          <li class="nav-item"
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/counter']">Counter</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/fetch-data']">Fetch data</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/show-product']">Shop</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+           [ngClass]="{ show: isExpanded }">
+
+        <ul class="navbar-nav flex-grow">
+
+          <li class="nav-item" [routerLinkActive]="['link-active']" *ngIf="readLocalStorageValue('userName') == 'null'">
+            <a class="nav-link text-dark" [routerLink]="['/login']">Login</a>
+          </li>
+
+          <li class="nav-item" [routerLinkActive]="['link-active']" *ngIf="readLocalStorageValue('userName') != 'null'">
+            <a class="nav-link text-dark" [routerLink]="['/login']" (click)="logout()">Logout</a>
+          </li>
+
+          <li class="nav-item" [routerLinkActive]="['link-active']" *ngIf="readLocalStorageValue('userName') != 'null'">
+
+            <!--<a class="btnss" href="@Url.Action(" Index", "Delivery" )"><i class="fa fa-list fa-xs"></i><span class="notification-label notification-label-red">localStorage.getItem('addToCartCount')</span></a>-->
+
+            <a class="nav-link text-dark" [routerLink]="['/addToCart']">
+              <i class="fa-solid fa-cart-plus fa-xl"></i>
+              <span class='badge badge-warning' id='lblCartCount'>{{addToCartCount}}</span>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+</header>
